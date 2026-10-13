@@ -88,7 +88,7 @@ async function main(){
     assert(bytes.equals(acquired),'Public fixture differs '+name);
     inputs[name]={url,sha256:digest(bytes),source:JSON.parse(bytes)};
   }
-  const deployArgs=['deploy','--contract','contracts/probe_minimax.py','--args',repo,JSON.stringify(JSON.stringify(probes)),String(budget)];
+  const deployArgs=['deploy','--contract','contracts/probe_minimax.py','--args',repo,JSON.stringify(probes),String(budget)];
   seed('deployment',deployArgs,process.env.PROBE_RESUME_DEPLOY_TX);
   const deployHash=await invoke('deployment',deployArgs);
   const deployed=await receipt('deployment',deployHash);

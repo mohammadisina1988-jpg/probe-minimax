@@ -5,7 +5,7 @@ on:
       resume_deploy_tx:
         description: Existing deployment hash; leave empty only for an intentional fresh deployment
         required: false
-        default: '0xb3130d0595431751fe546c766a3377e6b30b33802f10cc0859538e9bb044655a'
+        default: ''
       resume_writes_json:
         description: Known scenario hashes from proofs/resume.json, as a JSON object
         required: false
@@ -36,6 +36,7 @@ jobs:
         run: |
           genvm-lint check contracts/probe_minimax.py --json
           python -m pytest tests/direct -q --junitxml=proofs/direct-tests.xml
+          node scripts/check-fixtures.cjs
       - name: Prepare disposable CLI account
         run: node scripts/bootstrap-ci.cjs
       - name: Recover deployment and run live proofs

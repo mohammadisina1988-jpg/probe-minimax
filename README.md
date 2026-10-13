@@ -24,9 +24,10 @@ Four documented API modes can be separated by asking the one-unit metadata quest
 python -m pip install -r requirements-dev.txt
 genvm-lint check contracts/probe_minimax.py --json
 python -m pytest tests/direct -q
+node scripts/check-fixtures.cjs
 ```
 
-The 44 tests execute the real direct contract and explicitly replay validator callbacks with mocked web/LLM responses. The planner is also compared with exhaustive enumeration of all decision trees over 810 small ternary tables and 96 three-probe samples. Direct tests are not distributed-consensus proofs; live receipts are recorded separately.
+The 45 tests execute the real direct contract and explicitly replay validator callbacks with mocked web/LLM responses. The planner is also compared with exhaustive enumeration of all decision trees over 810 small ternary tables and 96 three-probe samples. Direct tests are not distributed-consensus proofs; live receipts are recorded separately.
 
 ## Interface
 
@@ -40,3 +41,9 @@ The 44 tests execute the real direct contract and explicitly replay validator ca
 The scope is closed-catalogue planning, not diagnosis of a real deployment. `walk` does not run probes, verify caller observations, or attest service behavior. Publisher profiles are statements; hashes establish bytes rather than truth or independent authorship. Costs are configured policy units, not measured time or gas. Limits and exhaustion risks are documented in the architecture note.
 
 This implementation uses established minimax planning. Its contract mechanism, fixtures, ternary-overlap handling, witnesses and solver tests are purpose-built. Generic JSON CLI transport and Windows direct-test compatibility scaffolding are adapted from earlier repositories; no earlier contract or transaction proof is reused.
+
+## Reproduce live proofs
+
+The manual **StudioNet proofs** workflow pins CLI 0.39.2, runs lint/direct tests, creates a disposable encrypted CLI account, and recovers the supplied deployment hash. It signs only gasless StudioNet calls. Proof artifacts contain sanitized receipts, state, walks and recovery hashes; signing material and CLI journals are excluded.
+
+For local use, install the pinned CLI, set `GENLAYER_CLI_PATH` to its `genlayer/dist/index.js`, and use an unlocked dedicated StudioNet account. Run `node scripts/live-proof.cjs`, then `node scripts/verify-proofs.cjs`. To recover an existing deployment, set `PROBE_RESUME_DEPLOY_TX`. Recover known writes with `PROBE_RESUME_WRITES` from the `hashes` object in `proofs/resume.json`, excluding the deployment entry. Never blindly resubmit a write when its outcome is uncertain. Existing state without its exact saved hash aborts the runner.

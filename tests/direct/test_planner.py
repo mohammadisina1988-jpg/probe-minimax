@@ -143,6 +143,10 @@ def test_invalid_configuration(direct_deploy,kind):
     if kind=='bad-budget':budget=0
     with pytest.raises(Exception,match=r'\[EXPECTED\]'):direct_deploy(str(ROOT/'contracts/probe_minimax.py'),REPO,json.dumps(probes),budget)
 
+def test_double_encoded_cli_policy_is_rejected(direct_deploy):
+    with pytest.raises(Exception,match='One to four probes required'):
+        direct_deploy(str(ROOT/'contracts/probe_minimax.py'),REPO,json.dumps(json.dumps(PROBES)),3)
+
 @lru_cache(None)
 def solver():
     tree=ast.parse((ROOT/'contracts/probe_minimax.py').read_text())
