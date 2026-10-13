@@ -1,0 +1,56 @@
+name: StudioNet proofs
+on:
+  workflow_dispatch:
+    inputs:
+      resume_deploy_tx:
+        description: Existing deployment hash; leave empty only for an intentional fresh deployment
+        required: false
+        default: '0xb3130d0595431751fe546c766a3377e6b30b33802f10cc0859538e9bb044655a'
+      resume_writes_json:
+        description: Known scenario hashes from proofs/resume.json, as a JSON object
+        required: false
+        default: '{}'
+permissions:
+  contents: read
+concurrency:
+  group: probe-minimax-studionet
+  cancel-in-progress: false
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned tooling
+        run: |
+          python -m pip install -r requirements-dev.txt
+          npm install --global genlayer@0.39.2
+          genvm-lint download --version v0.2.16
+      - name: Lint and direct tests
+        run: |
+          genvm-lint check contracts/probe_minimax.py --json
+          python -m pytest tests/direct -q --junitxml=proofs/direct-tests.xml
+      - name: Prepare disposable CLI account
+        run: node scripts/bootstrap-ci.cjs
+      - name: Recover deployment and run live proofs
+        env:
+          PROBE_RESUME_DEPLOY_TX: ${{ inputs.resume_deploy_tx }}
+          PROBE_RESUME_WRITES: ${{ inputs.resume_writes_json }}
+        run: node scripts/live-proof.cjs
+      - name: Independently verify live source, receipts and state
+        run: node scripts/verify-proofs.cjs
+      - name: Upload receipts and recovery hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studionet-proofs
+          path: |
+            proofs/*.json
+            proofs/*.xml
+          if-no-files-found: warn
