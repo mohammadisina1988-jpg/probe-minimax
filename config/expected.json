@@ -1,0 +1,6 @@
+{
+  "adaptive":{"matrix":[["YES","YES","YES"],["YES","NO","YES"],["NO","YES","YES"],["NO","YES","NO"]],"status":"READY","cost":3},
+  "ambiguous":{"matrix":[["YES","YES","YES"],["YES","NO","YES"],["NO","YES","UNKNOWN"],["NO","YES","NO"]],"status":"AMBIGUOUS","cost":null},
+  "cost-limit":{"matrix":[["YES","YES","YES"],["YES","YES","NO"],["YES","NO","YES"],["YES","NO","NO"]],"status":"COST_LIMIT","cost":4},
+  "overlap":{"matrix":[["YES","YES","YES"],["NO","NO","YES"],["UNKNOWN","YES","NO"]],"status":"READY","cost":3}
+}

@@ -1,0 +1,5 @@
+[
+  {"id":"metadata","question":"Does this mode permit metadata lookup without authentication?","cost":1},
+  {"id":"stream","question":"Does this mode support streaming exports?","cost":2},
+  {"id":"resume","question":"Does this mode support resuming uploads after interruption?","cost":2}
+]
