@@ -1,0 +1,11 @@
+{
+  "source_sha256": "ae1ce291687ab276aa43eeb96d8b63f7b072cfe21f60e9fb31f211882614240f",
+  "hashes": {
+    "deployment": "0x918f58512fa692b48623e41f2287a03fa386eaebb43a1ef708a271fa9e846b7b",
+    "adaptive": "0xcfa441a04f16b638fd07422cd13e0ecee19e01538624d568dc5b8ade584e0159",
+    "ambiguous": "0x9d2ceea7ee5b209c6f13129b7e0efb252eda8f6318a50f601377a51c09bf0e83",
+    "cost-limit": "0x96874afc3a7d4c06a16ac0b7b5f8909e8de5f2a08cf2a2893dcbd2975b4a5a3f",
+    "overlap": "0xca2ea128f5b5c82d383e4816c499770d8a4126a8d3123400fee3a5faaf635e8d",
+    "tamper": "0xe2c31f2dc119d099d4d9ac4d2d0d5d1117fbebb19e413d1feb3999fde45c4f84"
+  }
+}

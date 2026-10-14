@@ -1,0 +1,241 @@
+{
+  "contract": "0x8dec44265b80BF6C0eB59139C6ef6F112f0Bc0D2",
+  "transaction": "0xcfa441a04f16b638fd07422cd13e0ecee19e01538624d568dc5b8ade584e0159",
+  "index": 0,
+  "expected": {
+    "matrix": [
+      [
+        "YES",
+        "YES",
+        "YES"
+      ],
+      [
+        "YES",
+        "NO",
+        "YES"
+      ],
+      [
+        "NO",
+        "YES",
+        "YES"
+      ],
+      [
+        "NO",
+        "YES",
+        "NO"
+      ]
+    ],
+    "status": "READY",
+    "cost": 3
+  },
+  "state_before": {
+    "budget": 3,
+    "probes": [
+      {
+        "cost": 1,
+        "id": "metadata",
+        "question": "Does this mode permit metadata lookup without authentication?"
+      },
+      {
+        "cost": 2,
+        "id": "stream",
+        "question": "Does this mode support streaming exports?"
+      },
+      {
+        "cost": 2,
+        "id": "resume",
+        "question": "Does this mode support resuming uploads after interruption?"
+      }
+    ],
+    "repository": "mohammadisina1988-jpg/probe-minimax",
+    "results": []
+  },
+  "historical_prefix": false,
+  "observed_batch_count": 1,
+  "state": {
+    "budget": 3,
+    "probes": [
+      {
+        "cost": 1,
+        "id": "metadata",
+        "question": "Does this mode permit metadata lookup without authentication?"
+      },
+      {
+        "cost": 2,
+        "id": "stream",
+        "question": "Does this mode support streaming exports?"
+      },
+      {
+        "cost": 2,
+        "id": "resume",
+        "question": "Does this mode support resuming uploads after interruption?"
+      }
+    ],
+    "repository": "mohammadisina1988-jpg/probe-minimax",
+    "results": [
+      {
+        "rows": [
+          {
+            "cells": [
+              {
+                "answer": "YES",
+                "paragraph": 0
+              },
+              {
+                "answer": "YES",
+                "paragraph": 1
+              },
+              {
+                "answer": "YES",
+                "paragraph": 2
+              }
+            ],
+            "id": "OPEN-STREAM"
+          },
+          {
+            "cells": [
+              {
+                "answer": "YES",
+                "paragraph": 0
+              },
+              {
+                "answer": "NO",
+                "paragraph": 1
+              },
+              {
+                "answer": "YES",
+                "paragraph": 2
+              }
+            ],
+            "id": "OPEN-BASIC"
+          },
+          {
+            "cells": [
+              {
+                "answer": "NO",
+                "paragraph": 0
+              },
+              {
+                "answer": "YES",
+                "paragraph": 1
+              },
+              {
+                "answer": "YES",
+                "paragraph": 2
+              }
+            ],
+            "id": "AUTH-RESUME"
+          },
+          {
+            "cells": [
+              {
+                "answer": "NO",
+                "paragraph": 0
+              },
+              {
+                "answer": "YES",
+                "paragraph": 1
+              },
+              {
+                "answer": "NO",
+                "paragraph": 2
+              }
+            ],
+            "id": "AUTH-SINGLE"
+          }
+        ],
+        "sha256": "cd20c2fe1bb80cec3030eb32fa2854a646d39a53baaf7df86eec5906658bba49",
+        "solution": {
+          "budget": 3,
+          "optimal_cost": 3,
+          "status": "READY",
+          "tree": {
+            "candidates": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "no": {
+              "candidates": [
+                2,
+                3
+              ],
+              "no": {
+                "candidates": [
+                  3
+                ],
+                "probe": -1
+              },
+              "probe": 2,
+              "yes": {
+                "candidates": [
+                  2
+                ],
+                "probe": -1
+              }
+            },
+            "probe": 0,
+            "yes": {
+              "candidates": [
+                0,
+                1
+              ],
+              "no": {
+                "candidates": [
+                  1
+                ],
+                "probe": -1
+              },
+              "probe": 1,
+              "yes": {
+                "candidates": [
+                  0
+                ],
+                "probe": -1
+              }
+            }
+          },
+          "witness": null
+        },
+        "source": {
+          "profiles": [
+            {
+              "id": "OPEN-STREAM",
+              "paragraphs": [
+                "Metadata lookup is permitted without any authentication credentials.",
+                "Streaming exports are supported in this compatibility mode.",
+                "Uploads can be resumed after an interruption in this mode."
+              ]
+            },
+            {
+              "id": "OPEN-BASIC",
+              "paragraphs": [
+                "Metadata lookup is permitted without any authentication credentials.",
+                "This mode does not support streaming exports; exports are delivered only as complete files.",
+                "Uploads can be resumed after an interruption in this mode."
+              ]
+            },
+            {
+              "id": "AUTH-RESUME",
+              "paragraphs": [
+                "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+                "Streaming exports are supported in this compatibility mode.",
+                "Uploads can be resumed after an interruption in this mode."
+              ]
+            },
+            {
+              "id": "AUTH-SINGLE",
+              "paragraphs": [
+                "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+                "Streaming exports are supported in this compatibility mode.",
+                "Interrupted uploads cannot be resumed and must restart from the beginning."
+              ]
+            }
+          ]
+        },
+        "url": "https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/adaptive.json"
+      }
+    ]
+  }
+}

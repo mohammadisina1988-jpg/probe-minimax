@@ -1,0 +1,66 @@
+[
+  {
+    "answers": [
+      "YES"
+    ],
+    "result": {
+      "candidates": [
+        "OPEN-RESUME",
+        "CONFIG-SINGLE"
+      ],
+      "next_probe": {
+        "cost": 2,
+        "id": "resume",
+        "question": "Does this mode support resuming uploads after interruption?"
+      },
+      "spent": 1,
+      "status": "NEXT"
+    }
+  },
+  {
+    "answers": [
+      "NO"
+    ],
+    "result": {
+      "candidates": [
+        "AUTH-FILE",
+        "CONFIG-SINGLE"
+      ],
+      "next_probe": {
+        "cost": 2,
+        "id": "stream",
+        "question": "Does this mode support streaming exports?"
+      },
+      "spent": 1,
+      "status": "NEXT"
+    }
+  },
+  {
+    "answers": [
+      "YES",
+      "NO"
+    ],
+    "result": {
+      "candidates": [
+        "CONFIG-SINGLE"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  },
+  {
+    "answers": [
+      "NO",
+      "YES"
+    ],
+    "result": {
+      "candidates": [
+        "CONFIG-SINGLE"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  }
+]

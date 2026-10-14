@@ -8,6 +8,8 @@ Leader and validators acquire complete source bytes inside nondeterministic exec
 
 UNKNOWN means either probe answer remains possible. It is included in BOTH successor candidate sets. A complete tree must identify a unique profile under every permitted outcome sequence. The deterministic compiler memoizes candidate-mask/unused-probe states and minimizes `probe_cost + max(yes_cost, no_cost)`. Equal costs prefer constructor probe order. Positive-cost probes with a no-progress branch cannot improve the worst case and are pruned. Some UNKNOWN cells are harmless; others make full identification impossible.
 
+UNKNOWN outcomes are conservatively independent across probes. Unmodeled correlations cannot be used to make a plan cheaper. The fixed-order example permits stopping at a unique candidate but does not skip intermediate probes based on earlier answers; that skipping would itself be an adaptive policy.
+
 READY stores a complete policy within budget. COST_LIMIT stores the optimal policy but does not permit traversal through `walk`. AMBIGUOUS stores two profiles and a complete shared answer sequence that no available probe can separate. Profiles are never removed merely because their behavior is unspecified.
 
 `walk` is a read-only interpreter of HYPOTHETICAL answers. It does not acquire actual probe results, execute a test, attest a diagnosis, or certify service delivery. A leaf identifies a candidate relative to the closed catalogue and the published expected behaviors. An implementation outside the catalogue can still reach a leaf. Costs are configured policy units, not measured latency or GEN.

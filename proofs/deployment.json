@@ -1,0 +1,182 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0x8dec44265b80BF6C0eB59139C6ef6F112f0Bc0D2",
+  "transaction": "0x918f58512fa692b48623e41f2287a03fa386eaebb43a1ef708a271fa9e846b7b",
+  "source_sha256": "ae1ce291687ab276aa43eeb96d8b63f7b072cfe21f60e9fb31f211882614240f",
+  "exact_source_match": true,
+  "repository": "mohammadisina1988-jpg/probe-minimax",
+  "probes": [
+    {
+      "id": "metadata",
+      "question": "Does this mode permit metadata lookup without authentication?",
+      "cost": 1
+    },
+    {
+      "id": "stream",
+      "question": "Does this mode support streaming exports?",
+      "cost": 2
+    },
+    {
+      "id": "resume",
+      "question": "Does this mode support resuming uploads after interruption?",
+      "cost": 2
+    }
+  ],
+  "budget": 3,
+  "fixture_revision": "39fee06ffab99a99ce4d4d3be11c80bd325d06df",
+  "inputs": {
+    "adaptive": {
+      "url": "https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/adaptive.json",
+      "sha256": "cd20c2fe1bb80cec3030eb32fa2854a646d39a53baaf7df86eec5906658bba49",
+      "source": {
+        "profiles": [
+          {
+            "id": "OPEN-STREAM",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "OPEN-BASIC",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "This mode does not support streaming exports; exports are delivered only as complete files.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "AUTH-RESUME",
+            "paragraphs": [
+              "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "AUTH-SINGLE",
+            "paragraphs": [
+              "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Interrupted uploads cannot be resumed and must restart from the beginning."
+            ]
+          }
+        ]
+      }
+    },
+    "ambiguous": {
+      "url": "https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/ambiguous.json",
+      "sha256": "9dc67c0effd7a415c2323b7e2a94d1f841db077b83ce027ed0ee980c61073a28",
+      "source": {
+        "profiles": [
+          {
+            "id": "OPEN-STREAM",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "OPEN-BASIC",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "This mode does not support streaming exports; exports are delivered only as complete files.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "AUTH-UNSPECIFIED",
+            "paragraphs": [
+              "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Whether interrupted uploads can be resumed depends on unspecified deployment configuration."
+            ]
+          },
+          {
+            "id": "AUTH-SINGLE",
+            "paragraphs": [
+              "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Interrupted uploads cannot be resumed and must restart from the beginning."
+            ]
+          }
+        ]
+      }
+    },
+    "cost-limit": {
+      "url": "https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/cost-limit.json",
+      "sha256": "72bbef7ab8982aa1e4485272906e0ff50fcc4a20e3ef27ce3b9c095b36f1c66e",
+      "source": {
+        "profiles": [
+          {
+            "id": "STREAM-RESUME",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "STREAM-SINGLE",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Interrupted uploads cannot be resumed and must restart from the beginning."
+            ]
+          },
+          {
+            "id": "FILE-RESUME",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "This mode does not support streaming exports; exports are delivered only as complete files.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "FILE-SINGLE",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "This mode does not support streaming exports; exports are delivered only as complete files.",
+              "Interrupted uploads cannot be resumed and must restart from the beginning."
+            ]
+          }
+        ]
+      }
+    },
+    "overlap": {
+      "url": "https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/overlap.json",
+      "sha256": "76b5fb05f9c4f5d9200fdec81694177a560c95f1c5504ae2e5c26e7907381343",
+      "source": {
+        "profiles": [
+          {
+            "id": "OPEN-RESUME",
+            "paragraphs": [
+              "Metadata lookup is permitted without any authentication credentials.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "AUTH-FILE",
+            "paragraphs": [
+              "Metadata lookup requires authentication; unauthenticated lookup is prohibited.",
+              "This mode does not support streaming exports; exports are delivered only as complete files.",
+              "Uploads can be resumed after an interruption in this mode."
+            ]
+          },
+          {
+            "id": "CONFIG-SINGLE",
+            "paragraphs": [
+              "Whether metadata lookup needs authentication depends on unspecified deployment configuration.",
+              "Streaming exports are supported in this compatibility mode.",
+              "Interrupted uploads cannot be resumed and must restart from the beginning."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "answers": [],
+    "result": {
+      "candidates": [
+        "OPEN-STREAM",
+        "OPEN-BASIC",
+        "AUTH-RESUME",
+        "AUTH-SINGLE"
+      ],
+      "next_probe": {
+        "cost": 1,
+        "id": "metadata",
+        "question": "Does this mode permit metadata lookup without authentication?"
+      },
+      "spent": 0,
+      "status": "NEXT"
+    }
+  },
+  {
+    "answers": [
+      "YES"
+    ],
+    "result": {
+      "candidates": [
+        "OPEN-STREAM",
+        "OPEN-BASIC"
+      ],
+      "next_probe": {
+        "cost": 2,
+        "id": "stream",
+        "question": "Does this mode support streaming exports?"
+      },
+      "spent": 1,
+      "status": "NEXT"
+    }
+  },
+  {
+    "answers": [
+      "NO"
+    ],
+    "result": {
+      "candidates": [
+        "AUTH-RESUME",
+        "AUTH-SINGLE"
+      ],
+      "next_probe": {
+        "cost": 2,
+        "id": "resume",
+        "question": "Does this mode support resuming uploads after interruption?"
+      },
+      "spent": 1,
+      "status": "NEXT"
+    }
+  },
+  {
+    "answers": [
+      "YES",
+      "YES"
+    ],
+    "result": {
+      "candidates": [
+        "OPEN-STREAM"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  },
+  {
+    "answers": [
+      "YES",
+      "NO"
+    ],
+    "result": {
+      "candidates": [
+        "OPEN-BASIC"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  },
+  {
+    "answers": [
+      "NO",
+      "YES"
+    ],
+    "result": {
+      "candidates": [
+        "AUTH-RESUME"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  },
+  {
+    "answers": [
+      "NO",
+      "NO"
+    ],
+    "result": {
+      "candidates": [
+        "AUTH-SINGLE"
+      ],
+      "next_probe": null,
+      "spent": 3,
+      "status": "CANDIDATE"
+    }
+  }
+]

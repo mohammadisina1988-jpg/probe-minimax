@@ -6,6 +6,8 @@ The contract fixes Boolean probe predicates, positive integer costs and a budget
 
 UNKNOWN retains a profile on both branches. The compiler either produces a complete budget-feasible tree, records the optimal cost exceeding the budget, or gives a concrete indistinguishable pair with a shared answer sequence. It never treats missing documentation as NO or drops uncertain profiles to fabricate a cheaper policy.
 
+Gasless StudioNet deployment (chain 61999): **`0x8dec44265b80BF6C0eB59139C6ef6F112f0Bc0D2`**. [Deployment transaction](https://explorer-studio.genlayer.com/tx/0x918f58512fa692b48623e41f2287a03fa386eaebb43a1ef708a271fa9e846b7b) · [Four finalized scenarios and commitment rejection](proofs/README.md) · [Passing proof workflow](https://github.com/mohammadisina1988-jpg/probe-minimax/actions/runs/38471576994) · [Submission text](docs/submission.md).
+
 ## Example
 
 Four documented API modes can be separated by asking the one-unit metadata question first, then choosing the appropriate two-unit capability question. The adaptive worst-case cost is **3**. Every fixed ordering of these three probes costs **5** in the worst case. A separate fixture has an UNKNOWN that overlaps both root branches yet still allows a complete three-unit policy.
@@ -44,6 +46,6 @@ This implementation uses established minimax planning. Its contract mechanism, f
 
 ## Reproduce live proofs
 
-The manual **StudioNet proofs** workflow pins CLI 0.39.2, runs lint/direct tests, creates a disposable encrypted CLI account, and recovers the supplied deployment hash. It signs only gasless StudioNet calls. Proof artifacts contain sanitized receipts, state, walks and recovery hashes; signing material and CLI journals are excluded.
+The manual **StudioNet proofs** workflow pins CLI 0.39.2, runs lint/direct tests, creates a disposable encrypted CLI account, and deploys fresh or recovers an explicitly supplied deployment hash. It signs only gasless StudioNet calls. Proof artifacts contain sanitized receipts, state, walks and recovery hashes; signing material and CLI journals are excluded.
 
 For local use, install the pinned CLI, set `GENLAYER_CLI_PATH` to its `genlayer/dist/index.js`, and use an unlocked dedicated StudioNet account. Run `node scripts/live-proof.cjs`, then `node scripts/verify-proofs.cjs`. To recover an existing deployment, set `PROBE_RESUME_DEPLOY_TX`. Recover known writes with `PROBE_RESUME_WRITES` from the `hashes` object in `proofs/resume.json`, excluding the deployment entry. Never blindly resubmit a write when its outcome is uncertain. Existing state without its exact saved hash aborts the runner.

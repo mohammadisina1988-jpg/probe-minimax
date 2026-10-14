@@ -1,0 +1,183 @@
+{
+  "hash": "0xe2c31f2dc119d099d4d9ac4d2d0d5d1117fbebb19e413d1feb3999fde45c4f84",
+  "from_address": "0x436245C0Ea4aC62aad5014d971ECc3132C10A7ea",
+  "to_address": "0x8dec44265b80BF6C0eB59139C6ef6F112f0Bc0D2",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[\"https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/adaptive.json\",\"0d20c2fe1bb80cec3030eb32fa2854a646d39a53baaf7df86eec5906658bba49\",]\"method\":\"compile\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
+      "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+      "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+      "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "idle",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "idle"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/adaptive.json\",\"0d20c2fe1bb80cec3030eb32fa2854a646d39a53baaf7df86eec5906658bba49\",]\"method\":\"compile\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "rollback",
+            "payload": "[EXTERNAL] Source commitment mismatch"
+          }
+        },
+        "result": {
+          "status": "rollback",
+          "payload": "[EXTERNAL] Source commitment mismatch"
+        }
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mohammadisina1988-jpg/probe-minimax/39fee06ffab99a99ce4d4d3be11c80bd325d06df/profiles/adaptive.json\",\"0d20c2fe1bb80cec3030eb32fa2854a646d39a53baaf7df86eec5906658bba49\",]\"method\":\"compile\"}"
+        },
+        "result": {
+          "status": "rollback",
+          "payload": "[EXTERNAL] Source commitment mismatch"
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      }
+    ]
+  },
+  "gaslimit": 5,
+  "nonce": 5,
+  "created_at": "2026-10-13T21:43:15.845636+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x436245C0Ea4aC62aad5014d971ECc3132C10A7ea",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9022905808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901c427241a99000000000000000000000000436245c0ea4ac62aad5014d971ecc3132c10a7ea0000000000000000000000008dec44265b80bf6c0eb59139c6ef6f112f0bc0d20000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000e4f8e2b8df16046172677315ac0868747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6d6f68616d6d61646973696e61313938382d6a70672f70726f62652d6d696e696d61782f333966656530366666616239396139396365346434643362653131633830626433323564303664662f70726f66696c65732f61646170746976652e6a736f6e840430643230633266653162623830636563333033306562333266613238353461363436643339613533626161663764663836656563353930363635386262613439066d6574686f643c636f6d70696c6500000000000000000000000000000000000000000000000000000000008301e482a05f159a4e41d306c7e3e42135ca09a5ec259db6ab9d91ec6c4caa5299ae360949a05a1ccd7e672f3dcfc773368049eb20e9688f5474dd5ab74f808899f79da0b565"
+  },
+  "value_credited": false,
+  "sender": "0x436245C0Ea4aC62aad5014d971ECc3132C10A7ea",
+  "recipient": "0x8dec44265b80BF6C0eB59139C6ef6F112f0Bc0D2",
+  "tx_id": "0xe2c31f2dc119d099d4d9ac4d2d0d5d1117fbebb19e413d1feb3999fde45c4f84",
+  "activator": "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+  "last_leader": "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+      "0x90402341F0B0e97b23023c0a87de957FB7148E0F",
+      "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84",
+      "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE"
+    ],
+    "validator_votes_hash": [
+      "0xa2d54e578c04138765fbb598b08f68887f704bbac9a90e5622d15aa0a344c363",
+      "0x302d2531aa7b1b5ee51d93052abcaf0d2f2941dadbb089ae3474149cc2238d1c",
+      "0x5402031332480fea5edfb14506ac3b8afb14f1afc7f70372a520f75d739e2828",
+      "0x53ff1bc7ac93607dae001ae9a5ee899a66b468737aa800ca4e8380436291a54f",
+      "0x950f540a9c6d255ee532a6c2a919b89fc883d678abe8ec56be38dda7e2b0722c"
+    ],
+    "validator_votes": [
+      1,
+      5,
+      1,
+      1,
+      5
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "IDLE",
+      "AGREE",
+      "AGREE",
+      "IDLE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}
